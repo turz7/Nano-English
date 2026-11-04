@@ -1,0 +1,9 @@
+{
+  "name": "brightpath-english-portuguese",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/content.test.mjs",
+    "check": "node --check app.js && node --check content.js"
+  }
+}
