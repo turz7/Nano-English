@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/content.test.mjs",
-    "check": "node --check app.js && node --check content.js"
+    "test": "node tests/content.test.mjs && node tests/app.test.mjs && node tests/interactive.test.mjs",
+    "check": "node --check app.js && node --check content.js && node --check interactive.js"
   }
 }

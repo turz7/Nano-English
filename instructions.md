@@ -6,7 +6,7 @@ tags:
   - web-app
   - language-learning
   - prompt
-updated: 2026-11-03
+updated: 2026-11-05
 ---
 
 # Detailed Build Prompt: Learning English with Portuguese
@@ -119,6 +119,22 @@ For each lesson, supply:
 
 Content must be fact-checked for natural English, accurate Portuguese meaning, and the intended CEFR level. Mark dialect variants where they matter. Avoid misleading literal translations. Ensure exercises have unambiguous answers or clearly stated acceptable alternatives.
 
+### Next increment: learner has completed the first five lessons
+
+Treat the five lessons in “Primeiros encontros” as the learner's completed foundation. Keep them available for review and preserve their lesson IDs, prerequisite links, and saved progress. Extend the existing course rather than replacing its content or redesigning its dashboard and lesson layout.
+
+Add a second, ordered unit called “Mais inglês no dia a dia” at A1+ (a gentle bridge toward A2, not a hard intermediate course). Use these practical topics, in this order:
+
+1. Daily routines: present simple, common routine verbs, and usually/sometimes.
+2. Finding your way: ask where a place is and follow two short direction instructions.
+3. Shopping for clothes: ask a price, request a size, and ask to try something on.
+4. The last weekend: describe a couple of completed activities with regular past verbs and a few common irregular forms.
+5. Weekend plans: describe a near-future plan with be going to.
+
+Build from known phrases and introduce one manageable new pattern per lesson. Keep explanations in accessible Portuguese, use everyday adult contexts, and include at least three short retrieval-practice questions with kind feedback. Each lesson needs a measurable objective, warm-up, vocabulary with translations and pronunciation guidance, contextual dialogue, wrap-up, and prerequisites that follow the sequence above. Do not make the learner repeat the same beginner activities as new content.
+
+Preserve the current visual structure and navigation, grouping lessons by unit where useful. Make lesson totals, progress, and navigation work for both units; do not hardcode the original five-lesson count. Keep the existing local-progress storage key and old lesson IDs so completed work remains recorded. Do not mark new lessons complete by default.
+
 ## 5. Video and media requirements
 
 Videos must support the lesson objective; they are not decoration. Each video or external learning resource must be reviewed for:
@@ -130,6 +146,8 @@ Videos must support the lesson objective; they are not decoration. Each video or
 - A working embed URL from the original provider. Never fabricate URLs, claim to have watched a video that was not reviewed, download or rehost third-party content, or copy protected transcripts without permission.
 
 Use only resources that can lawfully be embedded and are appropriate for the app. Prefer creator-approved, openly licensed, or otherwise explicitly embeddable resources. If external resources cannot be verified during implementation, include a clearly labeled editable placeholder data entry and make the UI display the honest unavailable state; do not present a fake resource as real.
+
+For the new A1+ unit, provide one topic-matched video suggestion per lesson when a real candidate can be identified. Before calling it reviewed/verified, inspect the actual video or reliable provider information for lesson fit and difficulty, check caption availability and embedding, and record the source, title, provider, original URL, embed URL, review date, and a Portuguese listening task. Metadata or a search-result title alone is not proof that the video content, captions, or embed work. If those checks cannot be completed, label it clearly as a pending candidate (not verified) or use the unavailable state; do not claim a video was watched. Keep the lesson dialogue/explanation as the written alternative, and never require video playback for completion.
 
 ### Embed experience
 

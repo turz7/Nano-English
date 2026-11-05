@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Lições interativas de inglês com apoio em português — passo a passo com áudio e prática contínua." />
+    <title>BrightPath English — Lições Interativas A1+</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="interactive-page">
+    <a class="skip-link" href="#interactive-main">Pular para a lição interativa</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand-button" href="index.html" aria-label="Voltar para a visão geral">
+          <span class="brand-mark" aria-hidden="true">B</span>
+          <span>BrightPath <small>Interativo</small></span>
+        </a>
+        <nav class="site-nav" aria-label="Navegação do aplicativo">
+          <a class="nav-link" href="index.html">← Visão Geral</a>
+          <span class="nav-link active">⚡ Lições Interativas</span>
+        </nav>
+        <div class="header-controls">
+          <button id="toggle-audio-btn" class="control-btn" aria-label="Alternar reprodução de pronúncia em áudio" type="button">
+            <span class="control-icon" aria-hidden="true">🔊</span>
+            <span class="control-text">Áudio Ativo</span>
+          </button>
+          <button id="speed-audio-btn" class="control-btn" aria-label="Alternar velocidade de fala (normal ou lenta)" type="button">
+            <span class="control-icon" aria-hidden="true">⚡</span>
+            <span class="control-text">Velocidade: 1.0x</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="interactive-main" class="container" tabindex="-1">
+      <div id="interactive-app"></div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>Prática interativa passo a passo · Avanço contínuo.</span>
+        <span>Sem anúncios · Respeito ao seu ritmo · Salvo no seu dispositivo</span>
+      </div>
+    </footer>
+
+    <script type="module" src="interactive.js"></script>
+  </body>
+</html>
