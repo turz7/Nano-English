@@ -56,8 +56,9 @@ globalThis.localStorage = {
 await import("../app.js");
 
 assert.match(main.innerHTML, /Mais inglês no dia a dia/);
-assert.match(main.innerHTML, /10 lições/);
-assert.equal((main.innerHTML.match(/class="lesson-card /g) || []).length, 10);
+assert.match(main.innerHTML, /Ganhando autonomia/);
+assert.match(main.innerHTML, /13 lições/);
+assert.equal((main.innerHTML.match(/class="lesson-card /g) || []).length, 13);
 
 const routinesButton = findActionElements().find((element) =>
   element.dataset.action === "open-lesson" && element.dataset.lessonId === "routines"
@@ -76,4 +77,22 @@ assert.ok(correctChoice);
 correctChoice.click();
 assert.match(main.innerHTML, /Muito bem!/);
 
-console.log("Validated dashboard, A1+ lesson rendering, video embed, and answer feedback.");
+// Test A2 lesson opening & interaction
+const comparisonsButton = findActionElements().find((element) =>
+  element.dataset.action === "open-lesson" && element.dataset.lessonId === "comparisons"
+);
+assert.ok(comparisonsButton);
+comparisonsButton.click();
+
+assert.match(main.innerHTML, /Comparing options &amp; choices|Comparing options & choices/);
+assert.match(main.innerHTML, /A2/);
+assert.match(main.innerHTML, /HqueToxC4d4/);
+
+const correctComparisonChoice = findActionElements().find((element) =>
+  element.dataset.action === "answer-choice" && element.dataset.answer === "The train is faster than the bus."
+);
+assert.ok(correctComparisonChoice);
+correctComparisonChoice.click();
+assert.match(main.innerHTML, /Muito bem!/);
+
+console.log("Validated dashboard, A1+ & A2 lesson rendering, video embed, and answer feedback.");

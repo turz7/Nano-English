@@ -56,7 +56,7 @@ globalThis.localStorage = {
 const module = await import("../interactive.js");
 const { state, lessons, renderInteractive, unscrambleChallenges, submitChoiceAnswer } = module;
 
-assert.ok(lessons.length === 10, "Should have 10 lessons in total");
+assert.ok(lessons.length === 13, "Should have 13 lessons in total");
 assert.equal(state.selectedLessonId, "routines", "Should select routines based on URL param");
 assert.equal(state.stepIndex, 0, "Should start at step 0 (warmup)");
 
@@ -136,5 +136,21 @@ assert.match(appContainer.innerHTML, /Prática Contínua Infinita/);
 assert.match(appContainer.innerHTML, /Keep on Going!/);
 assert.match(appContainer.innerHTML, /3/);
 assert.match(appContainer.innerHTML, /Acertos seguidos/);
+
+// 11. Test A2 Unit & Lessons Unscramble Challenges
+state.continuousMode = false;
+assert.ok(unscrambleChallenges.invitations);
+assert.equal(unscrambleChallenges.invitations.target, "Would you like to join us for dinner?");
+assert.ok(unscrambleChallenges.comparisons);
+assert.equal(unscrambleChallenges.comparisons.target, "The train is faster than the bus.");
+assert.ok(unscrambleChallenges["travel-stay"]);
+assert.equal(unscrambleChallenges["travel-stay"].target, "I have a reservation under the name of Lucas.");
+
+state.selectedUnitId = "unit-3";
+state.selectedLessonId = "invitations";
+state.stepIndex = 0;
+renderInteractive();
+assert.match(appContainer.innerHTML, /Making invitations &amp; suggestions|Making invitations & suggestions/);
+assert.match(appContainer.innerHTML, /Ganhando autonomia/);
 
 console.log("Validated interactive lesson flow, step progression, audio cues, sentence unscramble, and keep-on-going transitions.");

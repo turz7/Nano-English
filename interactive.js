@@ -73,6 +73,24 @@ export const unscrambleChallenges = {
     target: "I'm going to visit my sister.",
     words: ["I'm", "going", "to", "visit", "my", "sister."],
     explanation: "Use a estrutura ‘be going to + verbo básico’ (I'm going to visit) para planos definidos."
+  },
+  invitations: {
+    prompt: "Faça o convite educado: ‘Você gostaria de se juntar a nós para o jantar?’",
+    target: "Would you like to join us for dinner?",
+    words: ["Would", "you", "like", "to", "join", "us", "for", "dinner?"],
+    explanation: "‘Would you like to...?’ é a fórmula polida e natural para fazer convites em inglês."
+  },
+  comparisons: {
+    prompt: "Monte a comparação entre os transportes: ‘O trem é mais rápido que o ônibus.’",
+    target: "The train is faster than the bus.",
+    words: ["The", "train", "is", "faster", "than", "the", "bus."],
+    explanation: "Para adjetivos curtos como fast, adicionamos -er + than (faster than) para formar o comparativo."
+  },
+  "travel-stay": {
+    prompt: "Faça a solicitação na recepção: ‘Tenho uma reserva no nome de Lucas.’",
+    target: "I have a reservation under the name of Lucas.",
+    words: ["I", "have", "a", "reservation", "under", "the", "name", "of", "Lucas."],
+    explanation: "‘Under the name of...’ é a expressão convencional usada em hotéis e restaurantes para indicar em nome de quem foi feita a reserva."
   }
 };
 
@@ -123,15 +141,15 @@ function initInitialLesson() {
     }
   }
 
-  // Default to first incomplete lesson in Unit 2 (A1+ step above), or first lesson of Unit 2
-  const unit2Lessons = lessons.filter((l) => l.unitId === "unit-2");
-  const firstIncomplete = unit2Lessons.find((l) => !state.progress.completedLessons.includes(l.id));
+  // Default to first incomplete lesson in Unit 2 or Unit 3, or first lesson of Unit 2
+  const advancedLessons = lessons.filter((l) => l.unitId === "unit-2" || l.unitId === "unit-3");
+  const firstIncomplete = advancedLessons.find((l) => !state.progress.completedLessons.includes(l.id));
   if (firstIncomplete) {
     state.selectedLessonId = firstIncomplete.id;
-    state.selectedUnitId = "unit-2";
+    state.selectedUnitId = firstIncomplete.unitId;
   } else {
-    state.selectedLessonId = unit2Lessons[0]?.id || lessons[0].id;
-    state.selectedUnitId = unit2Lessons[0]?.unitId || lessons[0].unitId;
+    state.selectedLessonId = advancedLessons[0]?.id || lessons[0].id;
+    state.selectedUnitId = advancedLessons[0]?.unitId || lessons[0].unitId;
   }
   initUnscramble();
 }

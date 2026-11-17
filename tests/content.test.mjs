@@ -3,8 +3,8 @@ import { course, validateCourse } from "../content.js";
 
 assert.equal(validateCourse(course), true);
 const lessons = course.units.flatMap((unit) => unit.lessons);
-assert.equal(course.units.length, 2);
-assert.equal(lessons.length, 10);
+assert.equal(course.units.length, 3);
+assert.equal(lessons.length, 13);
 for (const lesson of lessons) {
   assert.ok(lesson.objective);
   assert.ok(lesson.explanation);
@@ -36,6 +36,25 @@ assert.deepEqual(nextUnit.lessons.map((lesson) => lesson.prerequisites[0]), [
 ]);
 for (const lesson of nextUnit.lessons) {
   assert.equal(lesson.level, "A1+");
+  assert.equal(lesson.resource.status, "candidate");
+  assert.ok(lesson.resource.objectiveMatch);
+  assert.match(lesson.resource.verification, /revisar/i);
+}
+
+const a2Unit = course.units[2];
+assert.equal(a2Unit.level, "A2");
+assert.deepEqual(a2Unit.lessons.map((lesson) => lesson.id), [
+  "invitations",
+  "comparisons",
+  "travel-stay"
+]);
+assert.deepEqual(a2Unit.lessons.map((lesson) => lesson.prerequisites[0]), [
+  "future-plans",
+  "invitations",
+  "comparisons"
+]);
+for (const lesson of a2Unit.lessons) {
+  assert.equal(lesson.level, "A2");
   assert.equal(lesson.resource.status, "candidate");
   assert.ok(lesson.resource.objectiveMatch);
   assert.match(lesson.resource.verification, /revisar/i);

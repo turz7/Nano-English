@@ -5,7 +5,7 @@ Uma experiência web responsiva para ensinar inglês a iniciantes que falam port
 ## Páginas da aplicação
 
 1. **Painel Geral (`index.html`)**:
-   - Visão consolidada da trilha completa com duas etapas: **Primeiros encontros (A1)** e **Mais inglês no dia a dia (A1+)**.
+   - Visão consolidada da trilha completa com três etapas: **Primeiros encontros (A1)**, **Mais inglês no dia a dia (A1+)** e **Ganhando autonomia (A2)**.
    - Acompanhamento de progresso percentual, lições concluídas e leitura completa das explicações, vocabulários e diálogos.
    - Navegação direta para o novo modo interativo.
 
@@ -53,6 +53,6 @@ As lições ficam em `content.js`. Cada lição deve manter objetivo, explicaç�
 
 ## Limitações conhecidas
 
-- Os cinco recursos da primeira etapa foram revisados por relevância temática; os cinco recursos da etapa A1+ têm títulos/canais conferidos e estão sinalizados como sugestões pendentes de revisão de conteúdo e legendas. O app não baixa nem re-hospeda conteúdo de terceiros.
+- Os cinco recursos da primeira etapa foram revisados por relevância temática; os recursos das etapas A1+ e A2 têm títulos e canais conferidos nos metadados públicos e estão sinalizados como sugestões pendentes de revisão de conteúdo e legendas. O app não baixa nem re-hospeda conteúdo de terceiros.
 - A reprodução de fala nativa utiliza a síntese de voz do navegador (`window.speechSynthesis`), respeitando o dispositivo e sem custo de rede.
 - O progresso é local ao dispositivo e serve como registro de estudo e prática.

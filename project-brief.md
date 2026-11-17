@@ -29,6 +29,7 @@ When building this project, follow:
 - [x] Milestone 3: Practice, feedback, video embeds, progress saving, and accessibility review
 - [x] Milestone 4: Dedicated interactive lesson flow (Keep-on-Going mode) and multi-page navigation
 - [x] Milestone 5: Testing, documentation, and release-ready app
+- [x] Milestone 6: Advanced Unit 3 ("Ganhando autonomia", A2) with 3 more advanced lessons (`invitations`, `comparisons`, `travel-stay`), unscramble puzzles, and video suggestions
 
 ## 4. Work Breakdown & Action Items
 - [x] Inspect the existing repository and document its framework, run commands, and constraints.
@@ -37,7 +38,9 @@ When building this project, follow:
 - [x] Add aligned video resources and exercises to every lesson.
 - [x] Add progress persistence and test important user flows on mobile and desktop sizes.
 - [x] Build dedicated interactive learning page (`interactive.html`) featuring card-by-card progression, native voice pronunciation, sentence unscramble puzzles, and auto-advancing "Keep on Going" flow.
+- [x] Add Unit 3 (A2, "Ganhando autonomia") with 3 advanced lessons covering social invitations, comparative adjectives, and hotel check-in/problem solving, complete with exercises, audio pronunciation support, and sentence unscramble challenges.
 
 ## 5. Notes & Decisions Log
 - **2026-11-03:** Initial product direction: English is the target language; Portuguese is the learner's first language. Support Portuguese variants where practical and avoid assuming whether the learner uses Brazilian or European Portuguese.
 - **2026-11-05:** Added Unit 2 ("Mais inglês no dia a dia", A1+) as the next step above foundation lessons. Implemented dedicated interactive mode (`interactive.html`) with speech synthesis, sentence builder, and uninterrupted continuous practice flow.
+- **2026-11-17:** Created Unit 3 ("Ganhando autonomia", A2) introducing 3 more advanced lessons: `invitations` (polite modal invitations and suggestions), `comparisons` (comparatives morphology -er vs more vs irregular), and `travel-stay` (hotel check-in, amenities, and handling technical issues politely). Integrated unscramble challenges in interactive mode and candidate video resources.
